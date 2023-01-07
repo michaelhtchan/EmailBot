@@ -4,8 +4,8 @@ from email.message import EmailMessage
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 import yfinance as yf
-import pandas as pd
-
+import pandas as pd;
+import numpy as np;
 jpy=yf.Ticker('HKDJPY=X')
 hist=pd.DataFrame(jpy.history(period='max'))
 price_tdy=(1/hist.iat[-1,1])
@@ -15,8 +15,7 @@ nowtime=str(pd.Timestamp.now())[0:10]
 latest=str(hist.index[-1])[0:10]
 day_before_time=str(hist.index[-2])[0:10]
 
-if (nowtime==latest):
-
+if (nowtime==latest): 
     space=str(" ")
     emaillist=['htmichaelchan1498@gmail.com', '1155157803@link.cuhk.edu.hk','micahpeter.12345@gmail.com','winkie426@gmail.com','1155159347@link.cuhk.edu.hk']
     emaillisttest=['htmichaelchan1498@gmail.com', 'micahpeter.12345@gmail.com','1155157803@link.cuhk.edu.hk']
